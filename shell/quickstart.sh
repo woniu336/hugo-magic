@@ -63,7 +63,9 @@ display_menu() {
     echo
     echo -e " 7. SSH 管理工具 "
     echo
-    echo -e " 8. 停止 hugo 服务 "
+    echo -e " 8. 推送 public 到Github "
+	echo
+    echo -e " 9. 停止 hugo 服务 "
     echo
     echo -e " 0. 退出 "
     echo
@@ -90,7 +92,8 @@ handle_choice() {
             done
             ;;
         7)  sh ssh.sh ;;
-        8)  sh stop.sh ;;
+		8)  sh pb.sh ;;
+        9)  sh stop.sh ;;
         0)
             echo -e "${GREEN}退出程序.${NC}"
             exit 0

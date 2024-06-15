@@ -1,8 +1,7 @@
 ---
-title: "技术"
+title: "教程"
 description: "This is an example category"
-slug: "test"
-image: "hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg"
+image: "001.jpg"
 style:
     background: "#2a9d8f"
     color: "#fff"

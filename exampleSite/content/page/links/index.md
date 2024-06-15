@@ -1,23 +1,15 @@
 ---
 title: 伙伴们 
-description: 一些网站资源
+description: 
 slug: links
 ai: false
-image: https://imgs.leshans.eu.org/docs/1717812267.png
+image: 
 
 links:
   - title: GitHub
-    description: GitHub is the world's largest software development platform.
+    description: GitHub 是全球最大的软件开发平台。
     website: https://github.com
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  - title: 本站镜像
-    description: 👻搞机少年
-    website: https://blog.taoshuge.eu.org
-    image: https://i.imgtg.com/2023/07/31/Oi3cqX.png
-  - title: CSDN
-    description: 🎃专业开发者社区
-    website: https://blog.csdn.net/u010066597
-    image: 
 menu: 
     main:
         name: 友链         # 名称
@@ -26,3 +18,14 @@ menu:
             icon: link
 ---
 
+>在\content\page\links\index.md文件中添加友链
+
+格式:
+
+```
+links:
+  - title: GitHub
+    description: GitHub 是全球最大的软件开发平台。
+    website: https://github.com
+    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+```

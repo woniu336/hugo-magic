@@ -1,2 +1,2 @@
 cd ..
-hugo --minify
+hugo --gc --minify
