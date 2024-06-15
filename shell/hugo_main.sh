@@ -1,31 +1,26 @@
 #!/bin/bash
-#author: Lruihao
+# Author: Lruihao
+
+# 使用彩色字体提示用户输入序列号开始工作
 echo -e "\033[1;32m请输入序列号开始工作\033[0m"
 echo "--------------------------------------"
 echo "1. 新建文章"
-
 echo "2. 预览博客"
-
 echo "3. 生成静态文件"
-
-echo "4. 更新子模块"
-
+echo "4. 更新主题"
 echo "5. 一键推送"
-
-echo "6. 设置代理"
-
-echo "7. 取消代理"
-
-echo "8. Git全局设置"
-
-echo "9. http加速代理"
-
-echo "10. ssh加速代理"
-
+echo "6. 设置全局代理"
+echo "7. 取消全局代理"
+echo "8. SSH管理工具"
+echo "9. Github http代理 (默认端口7890)"
+echo "10. Github ssh代理"
 echo "--------------------------------------"
 echo "请按 Ctrl+C 停止"
 
-read num
+# 读取用户输入
+read -p "请输入序列号: " num
+
+# 根据用户输入执行相应的脚本
 case $num in
   1)
     sh post_generator.sh
@@ -44,12 +39,12 @@ case $num in
     ;;
   6)
     sh proxy.sh
-	;;
+    ;;
   7)
     sh unset.sh
-	;;
+    ;;
   8)
-    sh git-user.sh
+    sh ssh.sh
     ;;
   9)
     sh github_proxy.sh
@@ -58,11 +53,14 @@ case $num in
     sh SSH_Proxy.sh
     ;;
   *)
-    echo "There is no such serial number"
+    echo -e "\033[1;31m无效的序列号，请重新输入。\033[0m"
     ;;
 esac
 
+# 提示用户按任意键继续
 echo "按任意键继续..."
-read x
+read -n 1 -s
 clear
+
+# 重新运行脚本
 sh hugo_main.sh
