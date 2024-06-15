@@ -1,15 +1,20 @@
 #!/bin/bash
-#author: Lruihao
+# author: Lruihao
+
 cd ..
+
+# Add all changes
 git add .
-read -p "请输入提交消息: " commitMsg
-if [ -z "$commitMsg" ]; then
-  commitMsg="『note』Update $(date +'%F %a %T')"
-fi
-git commit -m "$commitMsg"
-if git push -f origin --all; then
-  echo -e "\033[1;32m推送成功，请按任意键退出。\033[0m"
+
+# Commit changes
+git commit -m "update"
+
+# Force push all branches to remote
+git push -f origin --all
+
+# Check if push was successful
+if [ $? -eq 0 ]; then
+  echo -e "\033[1;34m推送成功！所有更改已更新到远程仓库。\033[0m"
 else
-  echo -e "\033[1;31m推送失败，请检查错误并按任意键退出。\033[0m"
+  cho -e "\033[1;34m推送时发生错误。请检查你的网络连接或仓库权限。\033[0m"
 fi
-read -n 1 -s -r -p "Press any key to continue"
