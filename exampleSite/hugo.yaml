@@ -1,0 +1,253 @@
+
+## 注意: 每个冒号前要有空格,不然会出错
+
+baseurl: https://example.com  # 修改成你要发布在互联网的域名
+languageCode: en-us  # 默认代码语言
+theme: hugo-magic  # 使用的主题
+paginate: 6  # 每页显示文章数量
+title: blog # 博客标题
+copyright:  # 页脚版权信息
+
+# 主题的国际化支持
+# 可用的值: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+DefaultContentLanguage: zh-cn  # 默认内容语言
+
+# 如果 DefaultContentLanguage 是 [zh-cn ja ko]，将 hasCJKLanguage 设置为 true
+# 这将使 .Summary 和 .WordCount 正确处理 CJK 语言。
+hasCJKLanguage: false  # 设置是否包含中日韩语言
+
+languages:
+  zh-cn:
+    languageName: 中文  # 语言名称
+    title:  # 语言对应的标题
+    weight: 1  # 语言的权重
+    params:
+      description: 这里是描述 # 描述
+
+services:
+  # 使用前请将其更改为您的 Disqus shortname
+  disqus:
+    shortname: "hugo-magic"  # Disqus shortname
+  # Google Analytics 跟踪 ID
+  googleAnalytics:
+    id:  # GA 跟踪 ID
+
+permalinks:
+  post: /p/:slug/  # 文章链接格式
+  page: /:slug/  # 页面链接格式
+
+params:
+  mainSections:
+    - post  # 主要内容部分
+  featuredImageField: image  # 特色图片字段
+  rssFullContent: false  # RSS 是否显示全文
+  favicon: /favicon.ico  # 网站图标
+  
+  article.ai: true  # 是否启用 AI 摘要功能
+
+  showLeftSidebar: true  # 文章页是否隐藏左侧边栏 （阅读模式）
+
+  showScrollToTopButton: true  # 是否显示返回顶部按钮
+
+  site_start_date: "2023-07-25"  # 网站第一次上线的时间
+
+  woyaola_analytics: "" # 51.la 统计 ID https://v6.51.la/
+  woyaola_perf: ""      # 51.la 灵雀应用监控 ID https://perf.51.la/
+
+  
+  busuanzi:
+    enable: false  # 不蒜子统计是否启用，开启可能会拖慢网站加载速度。
+    
+  mainSections: ["post"]
+  showWelcome: false         ## 启用首页欢迎横幅，默认关闭，启用true
+  showHeatmap: true         ## 是否开启热力图
+  welcomeText: "👋 😊 🎉 ✨ 🚀 <span style='color:#e99312'></span>"
+
+  footer:
+    since: 2023   # 页脚显示的起始年份
+    customText:   # 页脚的自定义文本
+
+  dateFormat:
+    published: 2006-01-02  # 发布日期格式
+    lastUpdated: 2006-01-02 15:04  # 最后更新日期格式
+
+  sidebar:
+    emoji: 😎  # 侧边栏表情符号
+    subtitle: Live and learn. ✍️  # 侧边栏副标题 （不宜过长）
+    avatar:
+      enabled: true  # 是否启用头像
+      local: true  # 是否使用本地头像
+      src: img/me.png  # 头像路径
+
+  article:
+    math: false  # 是否启用数学公式
+    toc: true  # 是否显示目录
+    readingTime: true  # 是否显示阅读时间
+    wordCount: true  # 是否显示字数
+    license:
+      enabled: true  # 是否启用版权信息
+      default: 知识共享许可证 CC BY-NC-SA 4.0  # 默认版权信息
+
+  comments:
+    enabled: false  # 是否启用评论
+    provider: twikoo  # 评论提供商
+
+    disqusjs:
+      shortname:
+      apiUrl:
+      apiKey:
+      admin:
+      adminLabel:
+
+    utterances:
+      repo:
+      issueTerm: pathname
+      label:
+
+    # Waline 客户端配置详见: https://waline.js.org/en/reference/component.html
+    waline:
+      serverURL:
+      lang:
+      pageview:
+      emoji:
+        - https://unpkg.com/@waline/emojis@1.0.1/weibo
+      requiredMeta:
+        - name
+        - email
+        - url
+      locale:
+        admin: Admin
+        placeholder:
+
+    twikoo:
+      envId: 
+      region: 
+      path:
+      lang:
+
+    giscus:
+      repo:
+      repoID:
+      category:
+      categoryID:
+      mapping:
+      lightTheme:
+      darkTheme:
+      reactionsEnabled: 1
+      emitMetadata: 0
+
+    gitalk:
+      owner:
+      admin:
+      repo:
+      clientID:
+      clientSecret:
+
+    cusdis:
+      host:
+      id:
+
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      - type: categories
+        params:
+          limit: 10
+      - type: tag-cloud
+        params:
+          limit: 10
+    page:
+      - type: toc
+
+  opengraph:
+    twitter:
+      # 您的 Twitter 用户名
+      site:
+
+      # 可用的值: summary, summary_large_image
+      card: summary_large_image  # Twitter 卡片类型
+
+  defaultImage:
+    opengraph:
+      enabled: false  # 是否启用默认图片
+      local: false  # 是否使用本地图片
+      src:  # 图片路径
+
+  colorScheme:
+    # 显示切换按钮
+    toggle: true
+
+    # 可用的值: auto, light, dark
+    default: auto  # 默认颜色模式
+
+  imageProcessing:
+    cover:
+      enabled: true  # 是否启用封面图像处理
+    content:
+      enabled: true  # 是否启用内容图像处理
+
+### 自定义左侧栏菜单
+### 详见 https://stack.jimmycai.com/config/menu
+### 要移除 about、archive 和 search 页面菜单项，请从它们的 FrontMatter 中删除 `menu` 字段
+menu:
+  main: []
+
+  social:
+    - identifier: 
+      name: 
+      url: 
+      params:
+        icon: brand-github  ## 要自定义图标在 \assets 创建 icons 文件夹 图标文件后缀为.svg
+
+    - identifier: RSS
+      name: RSS
+      url: /index.xml
+      params:
+        icon: rss     ## 更多图标: https://tablericons.com/
+        
+    - identifier: 
+      name: 
+      url: 
+      params:
+        icon: 
+        
+    - identifier: 
+      name: 
+      url: 
+      params:
+        icon: web
+
+related:
+  includeNewer: true  # 包括较新的文章
+  threshold: 60  # 相关性阈值
+  toLower: false  # 是否转换为小写
+  indices:
+    - name: tags
+      weight: 100
+
+    - name: categories
+      weight: 200
+
+markup:
+  goldmark:
+    renderer:
+      ## 如果您的 Markdown 中包含 HTML 内容，请设置为 true
+      unsafe: true
+  tableOfContents:
+    endLevel: 4  # 目录结束级别
+    ordered: true  # 使用有序列表
+    startLevel: 2  # 目录起始级别
+  highlight:
+    noClasses: false
+    codeFences: true  # 启用代码围栏
+    guessSyntax: true  # 猜测语法
+    lineNoStart: 1  # 行号起始值
+    lineNos: false  # 显示行号
+    lineNumbersInTable: true  # 在表格中显示行号
+    tabWidth: 4  # Tab 宽度
+
+frontmatter:
+  lastmod: [":fileModTime", "lastmod"]  # 最后修改时间来源

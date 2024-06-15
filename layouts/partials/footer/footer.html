@@ -1,0 +1,78 @@
+{{- $ThemeVersion := "3.26.0" -}}
+<footer class="site-footer">
+    <section class="copyright">
+        &copy;
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+            {{ .Site.Params.footer.since }} - 
+        {{ end }}
+        {{ now.Format "2006" }} {{ default .Site.Title .Site.Copyright }}
+        {{$scratch := newScratch}}
+        {{ range (where .Site.Pages "Kind" "page") }}
+            {{$scratch.Add "total" .WordCount}}
+        {{ end }}
+        <br/>
+<!-- Add total page and word count time -->
+        {{$scratch := newScratch}}
+        {{ range (where .Site.Pages "Kind" "page" )}}
+	    {{$scratch.Add "total" .WordCount}}
+        {{ end }}
+        🕊️ 发表了{{ len (where .Site.RegularPages "Section" "post") }}篇文章 · 
+        总计{{ div ($scratch.Get "total") 1000.0 | lang.FormatNumber 2 }}k字
+        <br>
+<!-- Add blog running time -->
+    本站已稳定运行
+    <span id="runningdays" class="running-days"></span>
+    <script>
+    function updateRunningTime() {
+        const startDate = new Date("{{ .Site.Params.site_start_date }}".replace(/-/g, "/"));
+        const now = new Date();
+        const elapsedTime = now - startDate;
+
+        const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+        const result = `${days} 天 ${hours} 小时 ${minutes} 分 ${seconds} 秒 🚀`;
+        document.getElementById('runningdays').innerHTML = result;
+    }
+
+    setInterval(updateRunningTime, 1000);
+    updateRunningTime();  // Initialize immediately
+    </script>
+    <br>
+        {{ if .Site.Params.busuanzi.enable }}
+            <div class="busuanzi-footer">
+                <span id="busuanzi_container_site_pv">
+                    🤡 总访问量<span id="busuanzi_value_site_pv"></span>
+                </span>
+                <span id="busuanzi_container_site_uv">
+                    访客数<span id="busuanzi_value_site_uv"></span>
+                </span>
+            </div>
+        {{ end }}
+    </section>
+    <section class="powerby">
+        {{ with .Site.Params.footer.customText }}
+            {{ . | safeHTML }} <br/>
+        {{ end }}
+        {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
+        {{- $Theme := printf `<b><a href="https://github.com/woniu336/hugo-magic" target="_blank" rel="noopener" data-version="%s">hugo-magic</a></b>` $ThemeVersion -}}
+        {{- $DesignedBy := `<a href="https://blog.taoshuge.eu.org/" target="_blank" rel="noopener"><u>小洋葱</u></a>` -}}
+        {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} <br/>
+        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+    </section>
+        {{ $links := getJSON "data/footer_links.json" }}
+        {{ range $links.links }}
+        <a target="_blank" href="{{ .link }}"{{ with .title }} title="{{ . }}"{{ end }}>
+        <img src="{{ .img }}" alt="{{ .alt }}"{{ with .height }} height="{{ . }}"{{ end }}>
+        </a>
+       {{ end }}
+</footer>
+<!-- 在中英文之间插入空白 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+<script>
+  pangu.spacingPage();
+</script>
+
+

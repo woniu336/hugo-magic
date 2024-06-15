@@ -1,0 +1,17 @@
+{{- $name := .Get "name" | default (.Get 0) -}}
+{{- $url := .Get "url" | default (.Get 1) -}}
+{{- $avatar := .Get "avatar" | default (.Get 2) -}}
+{{- $bio := .Get "bio" | default (.Get 3) -}}
+
+<a href="{{- $url -}}" title="{{- $name -}}" class="friend-link" target="_blank" rel="friend">
+    <div class="friend-link-div">
+        <div class="friend-link-avatar">
+            <img src={{ .Get "avatar" }} class="friend-avatar" loading="lazy" alt="Avatar">
+        </div>
+        <div class="friend-link-info">
+            <i class="fa fa-link" aria-hidden="true"></i>
+            <i class="friend-name">{{ $name }}</i>
+            <p class="friend-bio">{{ $bio }}</p>
+        </div>
+    </div>
+</a>

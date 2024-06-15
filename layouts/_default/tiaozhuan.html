@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转页面</title>
+    <style>
+        .tiaozhuan-all {
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            border-radius: 10px;
+            background: #fff url(/img/tiaozhuanico.webp) no-repeat center center / cover;
+            color: #666;
+            word-break: break-all;
+            max-width: 700px;
+            height: 350px;
+            text-align: center;
+            font-size: 0.85rem;
+            overflow: hidden;
+            margin: 100px auto 0;
+        }
+        .tiaozhuan-nrong {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 20px 30px 20px;
+        }
+        .tiaozhuan-title {
+            font-size: 1.3rem;
+            font-family: var(--font-family-title);
+            color: #222;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+        .tiaozhuan-info {
+            margin-top: 6px;
+        }
+        .tiaozhuan-button {
+            margin-top: 20px;
+        }
+        .tiaozhuan-button a {
+            color: #fff;
+            background-color: #2a9d8f;
+            border-radius: 4px;
+            padding: 10px 30px;
+            font-family: var(--font-family-title);
+            font-size: 0.85rem;
+            border: 1px solid #2a9d8f;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .tiaozhuan-tip {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 0.85rem;
+            color: #000;
+            vertical-align: middle;
+        }
+        @media (prefers-color-scheme: dark) {
+            .tiaozhuan-all {
+                background: var(--background-dark-color) url(/img/tiaozhuandark.webp) no-repeat center center / cover;
+                color: #acacac;
+            }
+            .tiaozhuan-title {
+                color: #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tiaozhuan-all">
+        <div class="tiaozhuan-nrong">
+            <div class="tiaozhuan-title">即将离开 {{ .Site.Title }}，跳转到以下外部链接</div>
+            <div id="tiaozhuan-link"></div>
+            <div class="tiaozhuan-info">请自行识别该链接是否安全，并保管好个人信息。</div>
+            <div class="tiaozhuan-button">
+                <a href='' id='direct-link'>立即前往</a>
+                <span class="tiaozhuan-tip">(<span id="countdown">5</span>秒后自动跳转)</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkParent(element, classNames) {
+            while (element) {
+                if (element.classList && classNames.some(cn => element.classList.contains(cn))) {
+                    return true;
+                }
+                element = element.parentElement;
+            }
+            return false;
+        }
+        
+        var excludedClasses = ['talks_comments', 'tiaozhuan-button'];
+        
+        window.addEventListener('load', (event) => {
+            document.body.addEventListener('click', function(e) {
+                let target = e.target;
+                while (target && target.nodeName !== 'A') {
+                    target = target.parentNode;
+                }
+                if (target && target.nodeName === 'A' &&
+                    !checkParent(target, excludedClasses) &&
+                    !target.href.includes('blog.taoshuge.eu.org') &&
+                    !target.href.includes('douban.com') &&
+                    !target.href.includes('bilibili.com') &&
+                    !target.href.includes('github.com') &&
+                    target.hostname !== window.location.hostname) {
+                    e.preventDefault();
+                    let encodedUrl = btoa(target.href); // Base64 encode the URL
+                    let url = '/tiaozhuan?target=' + encodedUrl;
+                    window.open(url, '_blank');
+                }
+            });
+
+            const params = new URLSearchParams(window.location.search);
+            const encodedTarget = params.get('target');
+            const target = encodedTarget ? atob(encodedTarget) : null;
+
+            if (target) {
+                document.getElementById('direct-link').href = target;
+                document.getElementById('tiaozhuan-link').textContent = target;
+
+                let countdown = 5;
+                const countdownElement = document.getElementById('countdown');
+                const interval = setInterval(() => {
+                    countdown--;
+                    countdownElement.textContent = countdown;
+                    if (countdown === 0) {
+                        clearInterval(interval);
+                        window.location.href = target;
+                    }
+                }, 1000);
+            } else {
+                console.error('未指定重定向目标。');
+            }
+        });
+    </script>
+</body>
+</html>

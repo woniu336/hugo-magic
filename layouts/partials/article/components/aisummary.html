@@ -1,0 +1,41 @@
+<!-- 获取数据 -->
+{{ $summary := getJSON "data/summary/summary.json" }}
+
+<!-- 以 slug 作为锚点来对应文章与摘要 -->
+{{ $currentSlug := .Params.slug }}
+{{ $matchingSummary := index (where $summary.summaries "slug" $currentSlug) 0 }}
+
+<div class="post-ai">
+    <div class="ai-title">
+        <i class="fas fa-robot ai-title-icon"></i>
+        <div class="ai-title-text">摘要GPT</div>
+    </div>
+
+    <!-- Typeit 打字机效果，不需要则注释掉下面这行代码 -->
+    <div id="ai-explanation" class="ai-explanation"></div>
+
+    <div class="ai-explanation ai-explanation-content">
+        {{ if $matchingSummary.summary }}
+            {{ $matchingSummary.summary }}
+        {{ else }}
+            摘要小助理暂时失联跑路啦……😜
+        {{ end }}
+    </div>
+</div>
+
+<!-- 打字机效果的 JS 不需要则注释掉 -->
+<script src="https://npm.elemecdn.com/typeit@8.7.1/dist/index.umd.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 从 .ai-explanation-content 取值
+    const matchingSummary = document.querySelector(".ai-explanation-content").textContent;
+
+    new TypeIt("#ai-explanation", {
+        strings: matchingSummary,
+        speed: 10,
+        lifeLike: true,
+        waitUntilVisible: true,
+    }).go();
+});
+</script>

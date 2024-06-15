@@ -1,0 +1,27 @@
+<footer class="article-footer">
+    {{ partial "article/components/tags" . }}
+
+<!-- busuanzi -->
+{{ if .Site.Params.busuanzi.enable -}}
+<section class="article-copyright">
+{{ partial "helper/icon" "eye" }}
+  <span id="busuanzi_container_page_pv">阅读量: &nbsp&nbsp<span id="busuanzi_value_page_pv"></span></span>
+    </section>
+{{- end }}
+
+    {{ if and (.Site.Params.article.license.enabled) (not (eq .Params.license false)) }}
+    <section class="article-copyright">
+        {{ partial "helper/icon" "copyright" }}
+        <span>{{ default .Site.Params.article.license.default .Params.license | markdownify }}</span>
+    </section>
+    {{ end }}
+
+    {{- if ne .Lastmod .Date -}}
+    <section class="article-lastmod">
+        {{ partial "helper/icon" "clock" }}
+        <span>
+            {{ T "article.lastUpdatedOn" }} {{ .Lastmod.Format ( or .Site.Params.dateFormat.lastUpdated "Jan 02, 2006 15:04 MST" ) }}
+        </span>
+    </section>
+    {{- end -}}
+</footer>

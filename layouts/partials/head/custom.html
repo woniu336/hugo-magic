@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css" /> 
+<link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
+<!-- busuanzi -->
+{{- if .Site.Params.busuanzi.enable -}}
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta name="referrer" content="no-referrer-when-downgrade">
+{{- end -}}
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+{{ if .Site.Params.showScrollToTopButton }}
+    {{ partial "scroll-to-top.html" . }}
+{{ end }}
+<script src="/js/tiaozhuan.js"></script>
+<!-- umami -->
+<!-- 51.la -->
+<link rel="preconnect" href="//sdk.51.la">
+{{ if .Site.Params.woyaola_analytics }}
+<script>
+!function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"{{ .Site.Params.woyaola_analytics }}",ck:"{{ .Site.Params.woyaola_analytics }}",hashMode:true});
+</script>
+{{ end }}
+
+{{ if .Site.Params.woyaola_perf }}
+     <script>
+    !(function(c,i,e,b){
+      var h=i.createElement("script");
+      var f=i.getElementsByTagName("script")[0];
+      h.type="text/javascript";
+      h.crossorigin=true;
+      h.onload=function(){new c[b]["Monitor"]().init({id:"{{ .Site.Params.woyaola_perf }}"});};
+      f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue");
+    </script>
+    {{ end }}
+<!-- 51.la end-->
+<!-- 引入 Flying Pages -->
+<script>
+  window.FPConfig = {
+    delay: 0,    // 浏览器空闲多少秒后开始预加载
+    ignoreKeywords: [],  // 不进行预加载的链接 例 ["#", "/about"]
+    maxRPS: 3,    // 每秒最大加载数
+    hoverDelay: 50    // 鼠标悬浮后预加的延迟，毫秒单位
+  };
+</script>
+<script defer src="/js/flying-pages.min.js"></script>
