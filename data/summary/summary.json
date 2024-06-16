@@ -2,9 +2,21 @@
     "summaries": [
         {
             "title": "",
-            "slug": "",
+            "slug": "1",
             "generated": true,
-            "summary": ""
+            "summary": "文章介绍了如何在 Windows10 系统下使用 Git Bash 和 Hugo 搭建博客网站，以及安装 hugo 和 git 的步骤。通过下载、解压 hugo 并添加到环境变量，安装 Git 并新建博客项目，并引入主题文件等操作来完成搭建过程。最后启动预览，在浏览器中输入地址即可查看效果。"
+        },
+        {
+            "title": "",
+            "slug": "2",
+            "generated": true,
+            "summary": "这篇文章介绍了使用 Hugo 静态博客写作工具的流程，推荐了 typora 和 obsidian 两款软件。文章详细介绍了如何在 Github 上发布 Hugo 生成的静态网站文件，包括设置 Github Actions 工作流程、缓存资源、构建 Hugo 静态文件以及部署到 Github Pages 等步骤。同时提到了如何创建个人访问令牌、添加变量，并使用工具箱脚本中的菜单一键推送到 Github、Vercel 或 Cloudflare 进行部署。"
+        },
+        {
+            "title": "",
+            "slug": "3",
+            "generated": true,
+            "summary": "本文介绍了如何在 hugo-magic 主题中进行自定义设置。通过修改根目录下的 hugo.yaml 文件，可以实现几乎所有的自定义操作。同时，还提到了使用 AI 摘要脚本 sm.py 来生成摘要，并指出该脚本需要在根目录下运行。此外，文章还提及了如何修改页面底部的图标以及安装 Python 等相关内容。整体而言，文章主要围绕着对主题进行个性化定制和功能扩展展开讲解。"
         }
     ]
 }
