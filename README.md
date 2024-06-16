@@ -1,3 +1,12 @@
+
+## 参考教程
+
+https://woniu336.github.io/p/279/
+
+https://woniu336.github.io/p/280/
+
+https://woniu336.github.io/p/281/
+
 ## 快速建站
 
 在桌面右键打开 Git bash 运行以下命令
