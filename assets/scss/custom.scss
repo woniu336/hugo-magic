@@ -98,7 +98,7 @@ a, code {
 //-------------------------------------------
 // 设置选中字体的区域背景颜色
 ::selection {
-  color: #fff;
+  color: #D0D0D0;
   background: #557697;
 }
 
@@ -135,7 +135,7 @@ a {
   }
 
   @include respond(xl) {
-    height: 305px;
+    height: 320px;
   }
 }
 
@@ -158,17 +158,26 @@ a {
 .container {
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: space-between;
 
   .left-sidebar {
     order: -3;
+    flex-basis: var(--left-sidebar-max-width);
     max-width: var(--left-sidebar-max-width);
+  }
+
+  .main-content {
+    flex-grow: 1;
+    max-width: calc(100% - var(--left-sidebar-max-width) - var(--right-sidebar-max-width));
+    margin: 0 20px; // Add some margin for better spacing
   }
 
   .right-sidebar {
     order: -1;
+    flex-basis: var(--right-sidebar-max-width);
     max-width: var(--right-sidebar-max-width);
 
-    /// Display right sidebar when min-width: lg
     @include respond(lg) {
       display: flex;
     }
@@ -178,7 +187,7 @@ a {
     @include respond(md) {
       max-width: 1024px;
       --left-sidebar-max-width: 25%;
-      --right-sidebar-max-width: 22% !important;
+      --right-sidebar-max-width: 22%;
     }
 
     @include respond(lg) {
@@ -188,7 +197,7 @@ a {
     }
 
     @include respond(xl) {
-      max-width: 1453px; //1536px;
+      max-width: 1453px;
       --left-sidebar-max-width: 15%;
       --right-sidebar-max-width: 25%;
     }
@@ -210,6 +219,22 @@ a {
     }
   }
 }
+
+// 优化阅读体验的额外样式
+body {
+
+  color: #333; // 深灰色文字，而不是纯黑
+  line-height: 1.6; // 增加行高，提高可读性
+}
+
+.main-content {
+  background-color: #ffffff; // 白色背景
+  padding: 20px;
+  border-radius: 8px; // 圆角边框
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // 轻微阴影
+}
+
+
 
 //-------------------------------------------------------
 //全局页面小图片样式微调
@@ -459,13 +484,13 @@ a {
 
 // 文章页字体
 body, .article-content {
-    font-family: "Lato", sans-serif;
+    font-family: "fontello", sans-serif;
 	font-weight: normal;
 }
 Lato
 // 标题字体
 body, .article-title {
-    font-family: "Lato", sans-serif;
+    font-family: "fontello", sans-serif;
 }
 
 // 首页字体

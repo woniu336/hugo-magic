@@ -1,5 +1,5 @@
-$defaultTagBackgrounds: #2a9d8f, #df7988, #0177b8, #ffb900, #6b69d6;
-$defaultTagColors: #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7;
+$defaultTagBackgrounds: #2a9d8f, #df7988, #0177b8, #6b69d6;
+$defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
 
 /*
 *   Global style
@@ -11,11 +11,11 @@ $defaultTagColors: #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7;
         --main-top-padding: 50px;
     }
 
-    --body-background: #F2F0E9;
+    --body-background: #F3F3EE;
 
     --accent-color: #34495e;
     --accent-color-darker: #2c3e50;
-    --accent-color-text: #F8F8F7;
+    --accent-color-text: #FCFCF9;
     --body-text-color: #707070;
 
     --tag-border-radius: 4px;
@@ -26,7 +26,7 @@ $defaultTagColors: #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7;
     --scrollbar-track: var(--body-background);
 
     &[data-scheme="dark"] {
-        --body-background: #000000;
+        --body-background: #303030;
         --accent-color: #ecf0f1;
         --accent-color-darker: #bdc3c7;
         --accent-color-text: #3a3a3a;
@@ -51,7 +51,7 @@ $defaultTagColors: #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7;
 *   Card style
 */
 :root {
-    --card-background: #F8F8F7;
+    --card-background: #FCFCF9;
     --card-background-selected: #eaeaea;
 
     --card-text-color-main: #3a3a3a;
@@ -78,7 +78,7 @@ $defaultTagColors: #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7;
     }
 
     &[data-scheme="dark"] {
-        --card-background: #191c24;
+        --card-background: #1E2128;
         --card-background-selected: rgba(255, 255, 255, 0.16);
         --card-text-color-main: rgba(255, 255, 255, 0.9);
         --card-text-color-secondary: rgba(255, 255, 255, 0.7);
@@ -115,7 +115,7 @@ $defaultTagColors: #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7;
     --link-background-opacity-hover: 0.7;
 
     --pre-background-color: #232530;
-    --pre-text-color: #f8f8f2;
+    --pre-text-color: #ADD8E6;
 
     --code-background-color: rgba(0, 0, 0, 0.12);
     --code-text-color: #808080;
@@ -155,7 +155,7 @@ $defaultTagColors: #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7, #F8F8F7;
 }
 
 [data-scheme="dark"] {
-    --pre-text-color: #f8f8f2;
+    --pre-text-color: #ADD8E6;
     --pre-background-color: #232530;
     @import "partials/highlight/dark.scss";
 }
