@@ -1,118 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跳转页面</title>
     <style>
-        .tiaozhuan-all {
-            position: relative;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-            border-radius: 10px;
-            background: #fff url(/img/tiaozhuanico.webp) no-repeat center center / cover;
-            color: #666;
-            word-break: break-all;
-            max-width: 700px;
-            height: 350px;
-            text-align: center;
-            font-size: 0.85rem;
-            overflow: hidden;
-            margin: 100px auto 0;
+        :root {
+            --primary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f5f5f5;
         }
-        .tiaozhuan-nrong {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 20px 20px 30px 20px;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .tiaozhuan-all {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
         }
         .tiaozhuan-title {
-            font-size: 1.3rem;
-            font-family: var(--font-family-title);
-            color: #222;
-            line-height: 1.4;
-            margin-bottom: 4px;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        #tiaozhuan-link {
+            word-break: break-all;
+            margin-bottom: 15px;
+            color: var(--primary-color);
         }
         .tiaozhuan-info {
-            margin-top: 6px;
+            margin-bottom: 20px;
+            color: #666;
         }
-        .tiaozhuan-button {
-            margin-top: 20px;
+        .tiaozhuan-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
         .tiaozhuan-button a {
-            color: #fff;
-            background-color: #2a9d8f;
-            border-radius: 4px;
-            padding: 10px 30px;
-            font-family: var(--font-family-title);
-            font-size: 0.85rem;
-            border: 1px solid #2a9d8f;
             display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
             text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        .tiaozhuan-button a:hover {
+            background-color: #2980b9;
         }
         .tiaozhuan-tip {
-            display: inline-block;
-            margin-left: 10px;
-            font-size: 0.85rem;
-            color: #000;
-            vertical-align: middle;
+            color: #666;
+        }
+        .ad-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .ad-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
         }
         @media (prefers-color-scheme: dark) {
-            .tiaozhuan-all {
-                background: var(--background-dark-color) url(/img/tiaozhuandark.webp) no-repeat center center / cover;
-                color: #acacac;
+            :root {
+                --text-color: #f5f5f5;
+                --background-color: #222;
             }
-            .tiaozhuan-title {
-                color: #ddd;
+            body {
+                background-color: var(--background-color);
+            }
+            .tiaozhuan-all {
+                background-color: #333;
+            }
+            .tiaozhuan-info, .tiaozhuan-tip {
+                color: #bbb;
             }
         }
     </style>
 </head>
 <body>
     <div class="tiaozhuan-all">
-        <div class="tiaozhuan-nrong">
-            <div class="tiaozhuan-title">即将离开 {{ .Site.Title }}，跳转到以下外部链接</div>
-            <div id="tiaozhuan-link"></div>
-            <div class="tiaozhuan-info">请自行识别该链接是否安全，并保管好个人信息。</div>
+        <div class="tiaozhuan-title">即将离开本站，跳转到外部链接</div>
+        <div id="tiaozhuan-link"></div>
+        <div class="tiaozhuan-info">请自行识别该链接是否安全，并保管好个人信息。</div>
+        <div class="tiaozhuan-actions">
+            <span class="tiaozhuan-tip">(<span id="countdown">5</span>秒后自动跳转)</span>
             <div class="tiaozhuan-button">
-                <a href='' id='direct-link'>立即前往</a>
-                <span class="tiaozhuan-tip">(<span id="countdown">5</span>秒后自动跳转)</span>
+                <a href="" id="direct-link">立即前往</a>
             </div>
+        </div>
+        <div class="ad-container">
+            <a href="https://www.bilibili.com/" target="_blank">
+                <img src="/img/dog.png" alt="广告" />
+            </a>
         </div>
     </div>
     <script>
-        function checkParent(element, classNames) {
-            while (element) {
-                if (element.classList && classNames.some(cn => element.classList.contains(cn))) {
-                    return true;
-                }
-                element = element.parentElement;
-            }
-            return false;
-        }
-        
-        var excludedClasses = ['talks_comments', 'tiaozhuan-button'];
-        
         window.addEventListener('load', (event) => {
-            document.body.addEventListener('click', function(e) {
-                let target = e.target;
-                while (target && target.nodeName !== 'A') {
-                    target = target.parentNode;
-                }
-                if (target && target.nodeName === 'A' &&
-                    !checkParent(target, excludedClasses) &&
-                    !target.href.includes('blog.taoshuge.eu.org') &&
-                    !target.href.includes('douban.com') &&
-                    !target.href.includes('bilibili.com') &&
-                    !target.href.includes('github.com') &&
-                    target.hostname !== window.location.hostname) {
-                    e.preventDefault();
-                    let encodedUrl = btoa(target.href); // Base64 encode the URL
-                    let url = '/tiaozhuan?target=' + encodedUrl;
-                    window.open(url, '_blank');
-                }
-            });
-
             const params = new URLSearchParams(window.location.search);
             const encodedTarget = params.get('target');
             const target = encodedTarget ? atob(encodedTarget) : null;
