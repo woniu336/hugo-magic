@@ -7,8 +7,8 @@
 
 <div class="post-ai">
     <div class="ai-title">
-        <i class="fas fa-robot ai-title-icon"></i>
-        <div class="ai-title-text">摘要GPT</div>
+        <i class="fa fa-envira" style="font-size:24px"></i>
+        <div class="ai-title-text">文章摘要</div>
     </div>
 
     <!-- Typeit 打字机效果，不需要则注释掉下面这行代码 -->
@@ -18,13 +18,13 @@
         {{ if $matchingSummary.summary }}
             {{ $matchingSummary.summary }}
         {{ else }}
-            摘要小助理暂时失联跑路啦……😜
+            摘要小助理今天溜号啦……😜
         {{ end }}
     </div>
 </div>
 
 <!-- 打字机效果的 JS 不需要则注释掉 -->
-<script src="https://npm.elemecdn.com/typeit@8.7.1/dist/index.umd.js"></script>
+<script src="/js/index.umd.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
