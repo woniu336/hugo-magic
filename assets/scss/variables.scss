@@ -1,5 +1,5 @@
 $defaultTagBackgrounds: #2a9d8f, #df7988, #0177b8, #6b69d6;
-$defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
+$defaultTagColors: #F3F3EE, #F3F3EE, #F3F3EE, #F3F3EE, #F3F3EE;
 
 /*
 *   Global style
@@ -11,11 +11,11 @@ $defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
         --main-top-padding: 50px;
     }
 
-    --body-background: #F3F3EE;
+    --body-background: #FCFCF9;
 
     --accent-color: #34495e;
     --accent-color-darker: #2c3e50;
-    --accent-color-text: #FCFCF9;
+    --accent-color-text: #F3F3EE;
     --body-text-color: #707070;
 
     --tag-border-radius: 4px;
@@ -26,8 +26,8 @@ $defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
     --scrollbar-track: var(--body-background);
 
     &[data-scheme="dark"] {
-        --body-background: #303030;
-        --accent-color: #ecf0f1;
+        --body-background: #191A1A;
+        --accent-color: #8D9191;
         --accent-color-darker: #bdc3c7;
         --accent-color-text: #3a3a3a;
         --body-text-color: rgba(255, 255, 255, 0.7);
@@ -51,7 +51,7 @@ $defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
 *   Card style
 */
 :root {
-    --card-background: #FCFCF9;
+    --card-background: #F3F3EE;
     --card-background-selected: #eaeaea;
 
     --card-text-color-main: #3a3a3a;
@@ -78,10 +78,10 @@ $defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
     }
 
     &[data-scheme="dark"] {
-        --card-background: #1E2128;
+        --card-background: #202222;
         --card-background-selected: rgba(255, 255, 255, 0.16);
-        --card-text-color-main: rgba(255, 255, 255, 0.9);
-        --card-text-color-secondary: rgba(255, 255, 255, 0.7);
+        --card-text-color-main: rgba(183, 187, 192, 0.9);
+        --card-text-color-secondary: #ffffffb3;
         --card-text-color-tertiary: rgba(255, 255, 255, 0.5);
         --card-separator-color: rgba(255, 255, 255, 0.12);
     }
@@ -114,8 +114,8 @@ $defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
     --link-background-opacity: 0.5;
     --link-background-opacity-hover: 0.7;
 
-    --pre-background-color: #232530;
-    --pre-text-color: #ADD8E6;
+    --pre-background-color: #191A1A;
+    --pre-text-color: #A8ACB0;
 
     --code-background-color: rgba(0, 0, 0, 0.12);
     --code-text-color: #808080;
@@ -126,7 +126,7 @@ $defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
     --kbd-border-color: #dadada;
 
     &[data-scheme="dark"] {
-        --code-background-color: #232530;
+        --code-background-color: #191A1A;
         --code-text-color: rgba(255, 255, 255, 0.9);
 
         --table-border-color: #717171;
@@ -149,14 +149,14 @@ $defaultTagColors: #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9, #FCFCF9;
 }
 
 [data-scheme="light"] {
-    --pre-text-color: #232530;
+    --pre-text-color: #191A1A;
     --pre-background-color: #fafafa;
     @import "partials/highlight/light.scss";
 }
 
 [data-scheme="dark"] {
-    --pre-text-color: #ADD8E6;
-    --pre-background-color: #232530;
+    --pre-text-color: #A8ACB0;
+    --pre-background-color: #191A1A;
     @import "partials/highlight/dark.scss";
 }
 
