@@ -1,51 +1,76 @@
 .post-ai {
-    background: #f5f5f5;
-    border-radius: 2rem;
-    padding: 1rem;
-    line-height: 1.5;
-    border: 10px solid #ffffff;
-    margin: 1rem 0;
+    background-color: rgba(241, 245, 249, 0.4);  /* 从0.3增加到0.4 */
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin: 1.5rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);  /* 从0.02增加到0.03 */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);  /* 从0.1增加到0.15 */
+    backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+    .post-ai {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
 }
 
 .ai-title {
     display: flex;
-    color: #2d96bd;
-    border-radius: 0.5rem;
     align-items: center;
     padding: 0 0.25rem;
-    cursor: default;
-    user-select: none;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
 }
 
 .ai-title-icon {
-    width: 20px;
+    width: 24px;
     height: auto;
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));  /* 从0.03增加到0.05 */
+    opacity: 0.85;  /* 从0.8增加到0.85 */
 }
 
 .ai-title-text {
-    font-weight: bold;
-    margin-left: 1rem;
-    line-height: 1;
+    color: rgba(20, 20, 20, 0.7);  /* 从0.6增加到0.7 */
 }
 
 .ai-explanation {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.4);  /* 从0.3增加到0.4 */
     border-radius: 0.5rem;
-    border: 1px solid #cfe6f3;
-    font-size: 1.5rem;
-    line-height: 1.7;
-    display: inline-block;
-    width: 100%;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);  /* 从0.1增加到0.15 */
 }
 
 .ai-explanation span {
     margin-left: 0.5rem;
 }
 
-// 打字机效果，不需要则注释掉
+/* 打字机效果，不需要则注释掉 */
 .ai-explanation-content {
     display: none !important;
+}
+
+/* 深夜模式下的样式调整 */
+[data-scheme="dark"] .post-ai {
+    background-color: rgba(33, 38, 45, 0.4);  /* 调整背景色 */
+    border: 1px solid rgba(255, 255, 255, 0.05);  /* 调整边框颜色 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);  /* 调整阴影 */
+}
+
+[data-scheme="dark"] .ai-title-text,
+[data-scheme="dark"] .ai-explanation,
+[data-scheme="dark"] .ai-explanation span {
+    color: #A8ACB1;  /* 调整文本颜色 */
+}
+
+[data-scheme="dark"] .ai-explanation {
+    background: transparent;  /* 保持背景透明 */
+    border: 1px solid rgba(255, 255, 255, 0.05);  /* 调整边框颜色 */
 }

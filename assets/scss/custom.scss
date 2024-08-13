@@ -334,10 +334,16 @@ body {
   border-radius: 10px;
   font-size: 1.4rem;
   transition: transform .3s ease;
+  background-color: #e0f7fa; /* 使用淡青色背景 */
 }
 
 .tagCloud .tagCloud-tags a:hover {
   transform: scale(1.1, 1.1);
+}
+
+// dark模式下的标签背景色调整
+[data-scheme="dark"] .tagCloud .tagCloud-tags a {
+  background-color: #21262D; /* 深夜模式下的背景色 */
 }
 
 /* 首页欢迎板块样式 */
