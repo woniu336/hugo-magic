@@ -28,6 +28,7 @@
             padding: 30px;
             max-width: 500px;
             width: 100%;
+            text-align: center;
         }
         .tiaozhuan-title {
             font-size: 1.5rem;
@@ -45,7 +46,7 @@
         }
         .tiaozhuan-actions {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
         }
@@ -58,6 +59,7 @@
             border-radius: 20px;
             font-size: 0.9rem;
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
         .tiaozhuan-button a:hover {
             background-color: #2980b9;
@@ -94,9 +96,9 @@
 </head>
 <body>
     <div class="tiaozhuan-all">
-        <div class="tiaozhuan-title">即将离开本站，跳转到外部链接</div>
+        <div class="tiaozhuan-title">即将跳转到外部链接</div>
         <div id="tiaozhuan-link"></div>
-        <div class="tiaozhuan-info">请自行识别该链接是否安全，并保管好个人信息。</div>
+        <div class="tiaozhuan-info">请自行识别该链接是否安全</div>
         <div class="tiaozhuan-actions">
             <span class="tiaozhuan-tip">(<span id="countdown">5</span>秒后自动跳转)</span>
             <div class="tiaozhuan-button">
