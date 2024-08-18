@@ -57,7 +57,7 @@ display_menu() {
     echo
     echo -e " 4. 更新主题 "
     echo
-    echo -e " 5. 一键推送 "
+    echo -e " 5. 一键推送 ${GREEN}(本地仓库)${NC}"
     echo
     echo -e " 6. 代理设置 "
     echo
@@ -65,8 +65,10 @@ display_menu() {
     echo
     echo -e " 8. 推送 public 到Github "
 	echo
-    echo -e " 9. 停止 hugo 服务 "
+    echo -e " 9. 推送 public 到远程服务器 ${GREEN}(VPS)${NC}"
     echo
+	echo -e " 10. 停止 hugo 服务 "
+	echo
     echo -e " 0. 退出 "
     echo
     echo -e "${BLUE}====================================${NC}"
@@ -93,7 +95,8 @@ handle_choice() {
             ;;
         7)  sh ssh.sh ;;
 		8)  sh pb.sh ;;
-        9)  sh stop.sh ;;
+        9)  sh vps.sh ;;
+		10)  sh stop.sh ;;
         0)
             echo -e "${GREEN}退出程序.${NC}"
             exit 0

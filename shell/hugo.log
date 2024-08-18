@@ -1,0 +1,87 @@
+Watching for changes in D:\blog\{archetypes,assets,content,data,layouts,static,themes}
+Watching for config changes in D:\blog\hugo.yaml, D:\blog\themes\hugo-magic\config.yaml
+Start building sites … 
+hugo v0.127.0-74e0f3bd63c51f3c7a0f07a7c779eec9e922957e+extended windows/amd64 BuildDate=2024-06-05T10:27:59Z VendorInfo=gohugoio
+
+
+                   | ZH-CN  
+-------------------+--------
+  Pages            |   648  
+  Paginator pages  |   111  
+  Non-page files   |     4  
+  Static files     |    33  
+  Processed images |     7  
+  Aliases          |   169  
+  Cleaned          |     9  
+
+Built in 2191 ms
+Environment: "production"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+
+Change of config file detected, rebuilding site (#1).
+2024-08-18 14:29:00.500 +0800
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Rebuilt in 2073 ms
+
+Change detected, rebuilding site (#2).
+2024-08-18 14:30:21.019 +0800
+Source changed /post/306.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 1883 ms
+
+Change detected, rebuilding site (#3).
+2024-08-18 14:30:22.904 +0800
+Source changed /post
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 672 ms
+
+Change detected, rebuilding site (#4).
+2024-08-18 14:31:34.529 +0800
+Source changed /post/306.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 1884 ms
+
+Change detected, rebuilding site (#5).
+2024-08-18 14:31:36.414 +0800
+Source changed /post
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 659 ms
+
+Change detected, rebuilding site (#6).
+2024-08-18 14:31:58.534 +0800
+Source changed /post/306.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 1864 ms
+
+Change detected, rebuilding site (#7).
+2024-08-18 14:32:00.399 +0800
+Source changed /post
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 627 ms
+
+Change detected, rebuilding site (#8).
+2024-08-18 14:36:08.080 +0800
+Source changed /post/306.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 1898 ms
+
+Change detected, rebuilding site (#9).
+2024-08-18 14:36:09.979 +0800
+Source changed /post
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 678 ms
+
+Change detected, rebuilding site (#10).
+2024-08-18 14:40:12.117 +0800
+Source changed /post/306.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 1976 ms
+
+Change detected, rebuilding site (#11).
+2024-08-18 14:40:14.094 +0800
+Source changed /post
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 646 ms
