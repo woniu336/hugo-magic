@@ -204,13 +204,13 @@ menu:
       name: GitHub
       url: https://github.com/woniu336
       params:
-        icon: brand-github
+        icon: brand-github  ## 要自定义图标在 \assets 创建 icons 文件夹 图标文件后缀为.svg
 
     - identifier: RSS
       name: RSS
       url: /index.xml
       params:
-        icon: rss
+        icon: rss   # 更多图标: https://tablericons.com/
         
     - identifier: 
       name: 
