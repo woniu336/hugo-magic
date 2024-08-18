@@ -17,6 +17,7 @@ target = target.parentNode;
 if (target && target.nodeName === 'A' &&
 !checkParent(target, excludedClasses) &&
 !target.href.includes('blog.taoshuge.eu.org') &&
+!target.href.includes('book.catpdf.org') &&
 !target.href.includes('railway.app') &&
 !target.href.includes('cloudflare.com') &&
 !target.href.includes('gohugo.io') &&

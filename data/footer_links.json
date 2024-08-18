@@ -1,12 +1,6 @@
 {
   "links": [
-    {
-      "name": "hugo",
-      "link": "https://gohugo.io/",
-	  "title": "使用 Hugo 构建",
-      "img": "/img/hugo.svg",
-      "alt": ""
-    },
+
     {
       "name": "github",
       "link": "https://github.com/CaiJimmy/hugo-theme-stack",
@@ -14,27 +8,19 @@
       "img": "/img/github.svg",
       "alt": ""
     },
-    {
-      "name": "vercel",
-      "link": "https://vercel.com/",
-      "title": "部署于 Vercel",
-      "img": "/img/vercel.svg",
+	{
+      "name": "github",
+      "link": "https://gohugo.io/",
+      "title": "由 HUGO 驱动",
+      "img": "/img/hugo.svg",
       "alt": ""
     },
     {
-      "name": "umami",
-      "link": "https://umami.is/",
-      "title": "由 Umami 提供数据分析",
-      "img": "/img/umami.svg",
+      "name": "cloudflare",
+      "link": "https://cloudflare.com/",
+      "title": "由 CF 部署静态",
+      "img": "/img/cloudflare.svg",
       "alt": ""
-    },
-    {
-      "name": "notbyai",
-      "link": "https://notbyai.fyi",
-      "title": "Written by Human, Not by AI",
-      "img": "/img/notbyai.png",
-      "alt": "Written by Human, Not by AI",
-      "height": "30"
     }
   ]
 }

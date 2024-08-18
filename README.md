@@ -25,10 +25,8 @@ git submodule add https://github.com/woniu336/hugo-magic.git themes/hugo-magic
 ```bash
 cp -rf themes/hugo-magic/exampleSite/* .
 rm hugo.toml
-mkdir -p data/summary 
 mkdir -p assets/img 
 cp themes/hugo-magic/data/footer_links.json data/ 
-cp themes/hugo-magic/data/summary/summary.json data/summary/
 cp -r themes/hugo-magic/archetypes .
 cp -r themes/hugo-magic/shell .
 cp -r themes/hugo-magic/static .
