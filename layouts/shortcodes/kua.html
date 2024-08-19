@@ -1,0 +1,12 @@
+<!-- layouts/shortcodes/sharelink.html -->
+<div style="display: flex; align-items: center; background-color: #F1F5F9; border: 1px solid #ddd; border-radius: 4px; padding: 10px; margin: 10px 0;">
+    <div style="margin-right: 10px; display: flex; align-items: center; justify-content: center; height: 100%;">
+        <img src="/img/hugo.svg" alt="Cloud Icon" style="width: 24px; height: 24px;">
+    </div>
+    <div style="flex-grow: 1;">
+        <a href="{{ .Get 0 }}" target="_blank" rel="noopener noreferrer" style="color: #333; text-decoration: none; font-weight: bold;">{{ .Get 0 }}</a>
+    </div>
+    <div style="margin-left: 10px;">
+        <a href="{{ .Get 0 }}" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 5px 10px; background-color: #3e86ca; color: #fff; text-decoration: none; border-radius: 4px;">下载</a>
+    </div>
+</div>

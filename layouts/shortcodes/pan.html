@@ -1,0 +1,77 @@
+<!-- layouts/shortcodes/url-share-box.html -->
+{{ $url := .Get 0 }}
+<div class="url-share-box">
+  <div class="url-icon">
+    <img src="/img/hugo.svg" alt="Hugo logo" width="24" height="24">
+  </div>
+  <div class="url-text">{{ $url }}</div>
+  <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="download-button">
+    下载
+  </a>
+</div>
+
+<style>
+:root {
+  /* 颜色变量 */
+  --background-color: #FCFCF9;  /* 方框背景色 */
+  --text-color: #333333;        /* 主文本颜色 */
+  --button-bg-color: #28a745;   /* 按钮背景色 */
+  --button-text-color: white;   /* 按钮文本颜色 */
+  --button-hover-bg-color: #218838;  /* 按钮悬停背景色 */
+}
+
+.url-share-box {
+  background-color: var(--background-color);  /* 方框背景色 */
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.url-share-box:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.url-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.url-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.url-text {
+  font-size: 14px;
+  word-break: break-all;
+  flex-grow: 1;
+  margin: 0 10px;
+  color: var(--text-color);  /* 主文本颜色 */
+}
+
+.download-button {
+  background-color: var(--button-bg-color);  /* 按钮背景色 */
+  color: var(--button-text-color);  /* 按钮文本颜色 */
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-button:hover {
+  background-color: var(--button-hover-bg-color);  /* 按钮悬停背景色 */
+}
+</style>
