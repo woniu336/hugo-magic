@@ -1,5 +1,13 @@
 <!-- layouts/shortcodes/sharelink.html -->
-<div style="display: flex; align-items: center; background-color: #F1F5F9; border: 1px solid #ddd; border-radius: 4px; padding: 10px; margin: 10px 0;">
+{{ $showWatermark := site.Params.sharelink.showWatermark | default false }}
+{{ $watermarkText := site.Params.sharelink.watermarkText | default "Watermark" }}
+
+<div style="position: relative; display: flex; align-items: center; background-color: #F1F5F9; border: 1px solid #ddd; border-radius: 4px; padding: 10px; margin: 10px 0; overflow: hidden;">
+    {{ if $showWatermark }}
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 24px; opacity: 0.1; color: #3e86ca; white-space: nowrap; pointer-events: none;">
+        {{ $watermarkText }}
+    </div>
+    {{ end }}
     <div style="margin-right: 10px; display: flex; align-items: center; justify-content: center; height: 100%;">
         <img src="/img/hugo.svg" alt="Cloud Icon" style="width: 24px; height: 24px;">
     </div>
