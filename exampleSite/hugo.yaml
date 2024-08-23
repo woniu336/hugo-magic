@@ -59,7 +59,7 @@ params:
     content: "每一本书都是一扇窗，带您领略不同的风景。点亮心灵的明灯，开启属于您的阅读之旅！"
 
   sharelink:
-    showWatermark: true  # 下载短码水印开关，例如：{{< kua "https://pan.quark.cn/s/4846433b8ffe" >}}
+    showWatermark: false  # 下载短码水印开关，例如：{{< kua "https://pan.quark.cn/s/4846433b8ffe" >}}
     watermarkText: "文字水印"  # 自定义水印文字
   
   busuanzi:

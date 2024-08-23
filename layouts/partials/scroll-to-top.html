@@ -25,25 +25,36 @@
     width: 40px;
     height: 40px;
 }
+
+/* 使用媒体查询隐藏桌面端的搜索图标 */
+@media (min-width: 768px) {
+    #search-button {
+        display: none !important;
+    }
+}
+
+/* 使用媒体查询显示移动端的搜索图标 */
+@media (max-width: 767px) {
+    #search-button {
+        display: block;
+    }
+}
 </style>
 <button onclick="topFunction()" id="scroll-to-top" title="回到顶部">
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-arrow-up" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-chevrons-up-filled" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-  <path d="M12 8l-4 4" />
-  <path d="M12 8v8" />
-  <path d="M16 12l-4 -4" />
+  <path d="M12 2c-.218 0 -.432 .002 -.642 .005l-.616 .017l-.299 .013l-.579 .034l-.553 .046c-4.785 .464 -6.732 2.411 -7.196 7.196l-.046 .553l-.034 .579c-.005 .098 -.01 .198 -.013 .299l-.017 .616l-.004 .318l-.001 .324c0 .218 .002 .432 .005 .642l.017 .616l.013 .299l.034 .579l.046 .553c.464 4.785 2.411 6.732 7.196 7.196l.553 .046l.579 .034c.098 .005 .198 .01 .299 .013l.616 .017l.642 .005l.642 -.005l.616 -.017l.299 -.013l.579 -.034l.553 -.046c4.785 -.464 6.732 -2.411 7.196 -7.196l.046 -.553l.034 -.579c.005 -.098 .01 -.198 .013 -.299l.017 -.616l.005 -.642l-.005 -.642l-.017 -.616l-.013 -.299l-.034 -.579l-.046 -.553c-.464 -4.785 -2.411 -6.732 -7.196 -7.196l-.553 -.046l-.579 -.034a28.058 28.058 0 0 0 -.299 -.013l-.616 -.017l-.318 -.004l-.324 -.001zm-.707 9.293a1 1 0 0 1 1.32 -.083l.094 .083l3 3a1 1 0 0 1 -1.32 1.497l-.094 -.083l-2.293 -2.292l-2.293 2.292a1 1 0 0 1 -1.32 .083l-.094 -.083a1 1 0 0 1 -.083 -1.32l.083 -.094l3 -3zm0 -4a1 1 0 0 1 1.32 -.083l.094 .083l3 3a1 1 0 0 1 -1.32 1.497l-.094 -.083l-2.293 -2.292l-2.293 2.292a1 1 0 0 1 -1.32 .083l-.094 -.083a1 1 0 0 1 -.083 -1.32l.083 -.094l3 -3z" fill="currentColor" stroke-width="0" />
 </svg>
 </button>
 <button onclick="openSearch()" id="search-button" title="搜索">
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-search" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#597e8d" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M21 12a9 9 0 1 0 -9 9" />
-  <path d="M9 10h.01" />
-  <path d="M15 10h.01" />
-  <path d="M9.5 15c.658 .672 1.56 1 2.5 1" />
-  <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-  <path d="M20.2 20.2l1.8 1.8" />
+<svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="18" cy="18" r="16" />
+    </clipPath>
+  </defs>
+  <rect width="36" height="36" fill="#597e8d" clip-path="url(#circleClip)" />
+  <text x="18" y="22" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">搜</text>
 </svg>
 </button>
 <script>
