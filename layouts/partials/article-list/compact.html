@@ -30,9 +30,10 @@
                         width="{{ $Width }}"
                         height="{{ $Height }}" 
                         alt="{{ .Title }}"
+                        referrerpolicy="no-referrer"
                         loading="lazy">
                 {{ else }}
-                    <img src="{{ $image.permalink }}" loading="lazy" alt="Featured image of post {{ .Title }}" />
+                    <img src="{{ $image.permalink }}" loading="lazy" alt="Featured image of post {{ .Title }}" referrerpolicy="no-referrer" />
                 {{ end }}
             </div>
         {{ end }}

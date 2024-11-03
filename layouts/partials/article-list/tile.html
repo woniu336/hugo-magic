@@ -22,10 +22,11 @@
                         height="{{ $Height }}" 
                         loading="lazy"
                         alt="Featured image of post {{ .context.Title }}"
+                        referrerpolicy="no-referrer"
                         {{ with .context.Slug }}data-key="{{ . }}" {{ end }}
                         data-hash="{{ $imageRaw.Data.Integrity }}">
                 {{ else }}
-                    <img src="{{ $image.permalink }}" loading="lazy" data-key="{{ .context.Slug }}" data-hash="{{ $image.permalink }}"/>
+                    <img src="{{ $image.permalink }}" loading="lazy" data-key="{{ .context.Slug }}" data-hash="{{ $image.permalink }}" referrerpolicy="no-referrer" />
                 {{ end }}
             </div>
         {{ end }}

@@ -292,7 +292,7 @@ class Search {
                 </div>
                 {item.image &&
                     <div class="article-image">
-                        <img src={item.image} loading="lazy" />
+                        <img src={item.image} loading="lazy" referrerpolicy="no-referrer" />
                     </div>
                 }
             </a>
